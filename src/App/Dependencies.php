@@ -1,22 +1,23 @@
 <?php
 
-declare(strict_types=1);
-
 use Psr\Container\ContainerInterface;
 
-$container['db'] = static function (ContainerInterface $container): PDO {
-    $database = $container->get('settings')['db'];
-    $dsn = sprintf(
-        'mysql:host=%s;dbname=%s;port=%s;charset=utf8',
-        $database['host'],
-        $database['name'],
-        $database['port']
-    );
-    $pdo = new PDO($dsn, $database['user'], $database['pass']);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
-    $pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+$container->set('db', function (ContainerInterface $c) {
 
-    return $pdo;
-};
+    $config = $c->get('database');
 
+    $DB_HOST = $config['DATABASE_HOST'];
+    $DB_NAME = $config['DATABASE_NAME'];
+    $DB_USER = $config['DATABASE_USER'];
+    $DB_PASSWORD = $config['DATABASE_PASSWORD'];
+    $DB_CHARSET = $config['DATABASE_CHAR'];
+
+    $DSN = "mysql:host={$DB_HOST};dbname={$DB_NAME};charset={$DB_CHARSET}";
+
+    $options = [
+        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+    ];
+
+    return new PDO($DSN, $DB_USER, $DB_PASSWORD, $options);
+});
