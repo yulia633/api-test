@@ -22,6 +22,7 @@ INSERT INTO `users` (`name`, `surname`, `patronymic`, `organization`) VALUES ('I
 INSERT INTO `users` (`name`, `surname`, `patronymic`, `organization`) VALUES ('Alex', 'Alexov', 'Alexeevich', '');
 INSERT INTO `users` (`name`, `surname`, `patronymic`, `organization`) VALUES ('', '', '', 'OOO Brazilio Coffee');
 
+
 -- ----------------------------
 -- Table structure for ads
 -- ----------------------------
@@ -52,6 +53,15 @@ VALUES (
 );
 INSERT INTO `ads` (`title`, `description`, `price`, `photo`, `date_created`, `user_id`)
 VALUES (
+    'Sale my home 2',
+    'The house is located in a beautiful location in the Sestroretsk resort',
+    993.456,
+    'https://home-main.com',
+    '2020-06-23',
+    1
+);
+INSERT INTO `ads` (`title`, `description`, `price`, `photo`, `date_created`, `user_id`)
+VALUES (
     'Rent a room',
     'Rent a room in a communal apartment on Vaska with an attic',
     12.000,
@@ -67,6 +77,78 @@ VALUES (
     'https://car.com',
     '2019-07-23',
     3
+);
+INSERT INTO `ads` (`title`, `description`, `price`, `photo`, `date_created`, `user_id`)
+VALUES (
+    'Laptop',
+    'Just sale my laptop',
+    20.500,
+    'https://laptop.com',
+    '2020-07-03',
+    3
+);
+INSERT INTO `ads` (`title`, `description`, `price`, `photo`, `date_created`, `user_id`)
+VALUES (
+    'X-Box',
+    'I bought X-box',
+    30.50,
+    'https://game.com',
+    '2019-07-13',
+    2
+);
+INSERT INTO `ads` (`title`, `description`, `price`, `photo`, `date_created`, `user_id`)
+VALUES (
+    'Sale wood desk',
+    'I want to sale cool wood desk fot coding',
+    13.590,
+    'https://desk.com',
+    '2021-09-13',
+    1
+);
+INSERT INTO `ads` (`title`, `description`, `price`, `photo`, `date_created`, `user_id`)
+VALUES (
+    'Red car',
+    'Sale my red car',
+    230.500,
+    'https://red-car.com',
+    '2020-07-09',
+    1
+);
+INSERT INTO `ads` (`title`, `description`, `price`, `photo`, `date_created`, `user_id`)
+VALUES (
+    'Laptop',
+    'I Just sale laptop',
+    30.200,
+    'https://laptop-red.com',
+    '2019-07-23',
+    2
+);
+INSERT INTO `ads` (`title`, `description`, `price`, `photo`, `date_created`, `user_id`)
+VALUES (
+    'Games for PS',
+    'I bouhgt games for PS.',
+    1.500,
+    'https://ps-game.com',
+    '2019-04-23',
+    1
+);
+INSERT INTO `ads` (`title`, `description`, `price`, `photo`, `date_created`, `user_id`)
+VALUES (
+    'Tent outdoor',
+    'Very super tent for outdoor, rest and forest',
+    4.700,
+    'https://tent-outdoor.com',
+    '2021-05-21',
+    2
+);
+INSERT INTO `ads` (`title`, `description`, `price`, `photo`, `date_created`, `user_id`)
+VALUES (
+    'Tent blue',
+    'Just sale my tent',
+    7.500,
+    'https://tent.com',
+    '2021-05-23',
+    2
 );
 
 -- ----------------------------
